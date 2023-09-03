@@ -1,0 +1,45 @@
+{{#if feature_image}}
+   <figure class="gh-article-image">
+      <picture>
+          <source srcset="{{img_url feature_image size="xxs" format="avif"}} 50w,
+              {{img_url feature_image size="xs" format="avif"}} 100w,
+              {{img_url feature_image size="s" format="avif"}} 300w,
+              {{img_url feature_image size="m" format="avif"}} 500w,
+              {{img_url feature_image size="l" format="avif"}} 700w,
+              {{img_url feature_image size="xl" format="avif"}} 1000w,
+              {{img_url feature_image size="xxl" format="avif"}} 2000w" 
+              sizes="((max-width: 100px)) 100px,
+              ((min-width: 100px) and (max-width: 500px)) 500px,
+              ((min-width: 500px) and (max-width: 1000px)) 1000px,
+              (min-width: 1000px) 1000px" type="image/avif">
+          <source srcset="{{img_url feature_image size="xxs" format="webp"}} 50w,
+              {{img_url feature_image size="xs" format="webp"}} 100w,
+              {{img_url feature_image size="s" format="webp"}} 300w,
+              {{img_url feature_image size="m" format="webp"}} 500w,
+              {{img_url feature_image size="l" format="webp"}} 700w,
+              {{img_url feature_image size="xl" format="webp"}} 1000w,
+              {{img_url feature_image size="xxl" format="webp"}} 2000w" 
+              sizes="((max-width: 100px)) 100px,
+              ((min-width: 100px) and (max-width: 500px)) 500px,
+              ((min-width: 500px) and (max-width: 1000px)) 1000px,
+              (min-width: 1000px) 1000px" type="image/webp">
+          <img srcset="{{img_url feature_image size="xxs"}} 50w,
+              {{img_url feature_image size="xs"}} 100w,
+              {{img_url feature_image size="s"}} 300w,
+              {{img_url feature_image size="m"}} 500w,
+              {{img_url feature_image size="l"}} 700w,
+              {{img_url feature_image size="xl"}} 1000w,
+              {{img_url feature_image size="xxl"}} 2000w" 
+             src="{{img_url feature_image size="xl"}}" sizes="((max-width: 100px)) 100px,
+              ((min-width: 100px) and (max-width: 500px)) 500px,
+              ((min-width: 500px) and (max-width: 1000px)) 1000px,
+              (min-width: 1000px) 1000px" 
+              class="img-fluid feature-image" 
+              alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+      </picture>
+      {{#if feature_image_caption}}
+          {{!-- Show caption if feature image caption is set --}}
+          <figcaption>{{feature_image_caption}}</figcaption>
+      {{/if}}
+  </figure>
+{{/if}}
